@@ -1,0 +1,130 @@
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+
+body {
+  background-image: url(./background2.jpg);
+  background-size: cover;
+  background-position: center;
+  min-block-size: 100%;
+  min-inline-size: 100%;
+  box-sizing: border-box;
+  display: grid;
+  font-family: helvetica;
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+ 
+
+
+.my-block {
+	text-align: center;
+}
+
+div.center{
+	width: 99.3%;
+	height: 100%h;
+	text-align: center;
+}
+
+a {
+  color: black;
+  font-family: helvetica;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.center{
+	color: white;
+
+}
+p{
+	color: black;
+	margin: 0;
+}
+
+p.title{
+	padding-top: 10vh;
+	font-size: 10vw;
+	font-weight: 600;
+}
+
+p.info-title{
+	margin-top: 50px;
+	font-size: 2.5vw;
+}
+
+p.info{
+	margin-top: 180px;
+	font-size: 1.2vw;
+}
+
+p.contact-top{
+	margin-top: 20px;
+	font-size: 0.8vw;
+}
+p.contact-rest{
+	margin-top: 10px;
+	font-size: 0.8vw;
+}
+
+.link--kale{
+	font-family: halyard-display, sans-serif;
+	font-weight: 600;
+}
+
+
+.link{
+	cursor: pointer;
+	font-size: 0.8vw;
+	position: relative;
+	white-space: nowrap;
+	color: var(--color-text);
+}
+
+@media screen and (max-height: 1200px) {
+	p.title{
+		padding-top: 6vh;
+		font-size: 8vw;
+	}
+	p.info-title{
+		margin-top: 5vh;
+		font-size: 2vw;
+	}
+	p.info{
+		font-size: 1vw;
+	}
+	p.contact-top{
+		font-size: 0.7vw;
+	}
+}
+
+
+@media screen and (max-width: 800px) {
+	p.info-title{
+		margin-top: 5vh;
+		font-size: 4vw;
+	}
+	p.info{
+		font-size:	3vw;
+	}
+	p.contact-top{
+		font-size: 2.5vw;
+	}
+	p.contact-rest{
+		font-size: 2.5vw;
+	}
+	.link{
+		font-size: 2.5vw;
+	}
+}
