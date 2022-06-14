@@ -110,7 +110,7 @@ p.contact-rest{
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1050px) {
 	p.info-title{
 		margin-top: 5vh;
 		font-size: 4vw;
