@@ -44,7 +44,7 @@ h1.big {
   -webkit-text-fill-color: transparent;
   padding-top: 3vh;
   font-family: helvetica, sans-serif;
-  line-height: 0.7;
+  line-height: 1.0;
   font-size: 10vw;
   text-align: left;
   margin-top: 5vh;
