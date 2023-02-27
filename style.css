@@ -31,7 +31,7 @@ html, body {
 div.center{
 	width: 99.3%;
 	height: 100%h;
-	text-align: center;
+	text-align: left;
 }
 
 h1.big {
@@ -41,7 +41,7 @@ h1.big {
     padding-top: 3vh;
     font-family: helvetica, sans-serif;
     line-height: 0.7;
-    font-size: 22vw;
+    font-size: 18vw;
     width: vw;
     text-align: left;
     margin-top: 2vh;
@@ -55,12 +55,13 @@ h1.big1 {
     -webkit-text-fill-color: transparent;
     padding-top: 0px;
     font-family: helvetica, sans-serif;
-    font-size: 22vw;
+    font-size: 18vw;
     line-height: 0.8;
     text-align: left;
     margin-top: 0px;
     font-weight: 700;
-    margin-bottom: 9vh;
+    height: 17.5vw;
+    margin-bottom: 0;
     animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 @keyframes slideInFromLeft {
@@ -99,9 +100,10 @@ p.title{
 	font-weight: 600;
 }
 
-p.info-title{
-	margin-top: 50px;
-	font-size: 2.5vw;
+p.info-title {
+    margin-top: 1vh;
+    font-size: 4vw;t
+    text-align: left;
 }
 
 p.info{
@@ -111,11 +113,11 @@ p.info{
 
 p.contact-top{
 	margin-top: 20px;
-	font-size: 0.8vw;
+	font-size: 1.2vw;
 }
 p.contact-rest{
 	margin-top: 10px;
-	font-size: 0.8vw;
+	font-size: 1.2vw;
 }
 
 .link--kale{
@@ -133,13 +135,9 @@ p.contact-rest{
 }
 
 @media screen and (max-height: 1200px) {
-	p.title{
-		padding-top: 6vh;
-		font-size: 8vw;
-	}
-	p.info-title{
-		margin-top: 5vh;
-		font-size: 2vw;
+	p.info-title {
+    	margin-top: 3vh;
+    	font-size: 2vw;
 	}
 	p.info{
 		font-size: 1vw;
@@ -151,9 +149,10 @@ p.contact-rest{
 
 
 @media screen and (max-width: 1090px) {
-	p.info-title{
-		margin-top: 5vh;
-		font-size: 4vw;
+	p.info-title {
+    		margin-top: 15vh;
+    		font-size: 4vw;
+    		padding-left: 1vw;
 	}
 	p.info{
 		margin-top: 400px;
