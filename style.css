@@ -35,21 +35,33 @@ div.center{
 }
 
 h1.big {
-  background: linear-gradient(
-    to right, 
-    hsl(200 100% 52%), /* 200 100% 62% */
-    hsl(360 100% 49%)  /* 360 100% 59% */
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  padding-top: 3vh;
-  font-family: helvetica, sans-serif;
-  line-height: 1.0;
-  font-size: 10vw;
-  text-align: left;
-  margin-top: 5vh;
-  font-weight: 700;
-  animation: 1s ease-out 0s 1 slideInFromLeft;
+    background: linear-gradient( to right, hsl(200 100% 52%), /* 200 100% 62% */ hsl(360 100% 49%) /* 360 100% 59% */ );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-top: 3vh;
+    font-family: helvetica, sans-serif;
+    line-height: 0.7;
+    font-size: 22vw;
+    width: vw;
+    text-align: left;
+    margin-top: 2vh;
+    font-weight: 700;
+    margin-bottom: 0;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+h1.big1 {
+    background: linear-gradient( to right, hsl(200 100% 52%), /* 200 100% 62% */ hsl(360 100% 49%) /* 360 100% 59% */ );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-top: 0px;
+    font-family: helvetica, sans-serif;
+    font-size: 22vw;
+    line-height: 0.8;
+    text-align: left;
+    margin-top: 0px;
+    font-weight: 700;
+    margin-bottom: 9vh;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 @keyframes slideInFromLeft {
   0% {
