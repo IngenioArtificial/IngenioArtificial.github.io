@@ -34,6 +34,34 @@ div.center{
 	text-align: center;
 }
 
+h1.big {
+  background: linear-gradient(
+    to right, 
+    hsl(200 100% 52%), /* 200 100% 62% */
+    hsl(360 100% 49%)  /* 360 100% 59% */
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-top: 3vh;
+  font-family: helvetica, sans-serif;
+  line-height: 0.7;
+  font-size: 10vw;
+  text-align: left;
+  margin-top: 5vh;
+  font-weight: 700;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 a {
   color: black;
   font-family: helvetica;
