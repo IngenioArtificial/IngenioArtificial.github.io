@@ -170,19 +170,19 @@
 				//mesh.scale.x = mesh.scale.y = mesh.scale.z = s;
 				//scene.add( mesh );
 
-				var textureLoader = new THREE.TextureLoader();
-				textureLoader.setCrossOrigin("anonymous");
-				textureLoader.load("textures/rut.png", function (texture){
-					mesh = geometry
-					mesh.traverse(function (child) {
+				//var textureLoader = new THREE.TextureLoader();
+				//textureLoader.setCrossOrigin("anonymous");
+				//textureLoader.load("textures/rut.png", function (texture){
+				//	mesh = geometry
+				//	mesh.traverse(function (child) {
+//
+				//	if (child instanceof THREE.Mesh) {
 
-					if (child instanceof THREE.Mesh) {
-
-						child.material.map = texture;
-						child.material.needsUpdate = true;
-						}
-					})
-				})
+				//		child.material.map = texture;
+				//		child.material.needsUpdate = true;
+				//		}
+				//	})
+				//})
 
 			}
 
