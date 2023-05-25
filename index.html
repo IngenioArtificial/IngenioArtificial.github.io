@@ -33,6 +33,7 @@
 			import Stats from 'three/addons/libs/stats.module.js';
 
 			import { PLYLoader } from 'three/addons/loaders/PLYLoader.js';
+			import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
 
 			let container, stats;
 
@@ -108,8 +109,10 @@
 				stats = new Stats();
 				container.appendChild( stats.dom );
 
+				const fbxLoader = new FBXLoader()
 				const loader = new PLYLoader();
-				loader.load( 'models/rut.fbx', function ( geometry ) {
+				fbxloader.load( 'models/rut.fbx', function ( geometry ) {
+					
 
 					createScene( geometry, cubeMaterial1, cubeMaterial2, cubeMaterial3 );
 
@@ -136,25 +139,49 @@
 			}
 
 			function createScene( geometry, m1, m2, m3 ) {
-				const textu = new THREE.TextureLoader().load("textures/rut.png")
+
+				
+
+
+
+				//const textu = new THREE.TextureLoader().load("textures/rut.png")
+
 
 				geometry.computeVertexNormals();
 
 				const s = 1.5;
 
+				#let rutMesh = new THREE.Mesh(geometry)
+
+
+
 				let mesh = new THREE.Mesh( geometry, m1 );
 				mesh.scale.x = mesh.scale.y = mesh.scale.z = s;
 				scene.add( mesh );
 
-				mesh = new THREE.Mesh( geometry, m2 );
-				mesh.position.x = - 1500;
-				mesh.scale.x = mesh.scale.y = mesh.scale.z = s;
-				scene.add( mesh );
+				//mesh = new THREE.Mesh( geometry, m2 );
+				//mesh.position.x = - 1500;
+				//mesh.scale.x = mesh.scale.y = mesh.scale.z = s;
+				//scene.add( mesh );
 
-				mesh = new THREE.Mesh( geometry, m3 );
-				mesh.position.x = 1500;
-				mesh.scale.x = mesh.scale.y = mesh.scale.z = s;
-				scene.add( mesh );
+				//mesh = new THREE.Mesh( geometry, m3 );
+				//mesh.position.x = 1500;
+				//mesh.scale.x = mesh.scale.y = mesh.scale.z = s;
+				//scene.add( mesh );
+
+				var textureLoader = new THREE.TextureLoader();
+				textureLoader.setCrossOrigin("anonymous");
+				textureLoader.load("textures/rut.png", function (texture){
+					mesh = gemoetry
+					mesh.traverse(function (child) {
+
+					if (child instanceof THREE.Mesh) {
+
+						child.material.map = texture;
+						child.material.needsUpdate = true;
+						}
+					})
+				})
 
 			}
 
