@@ -95,6 +95,9 @@
 				const cubeMaterial2 = new THREE.MeshPhongMaterial( { color: 0xccfffd, envMap: textureCube, refractionRatio: 0.985 } );
 				const cubeMaterial1 = new THREE.MeshPhongMaterial( { color: 0xffffff, envMap: textureCube, refractionRatio: 0.98 } );
 
+				//const textu = new THREE.TextureLoader().load("textures/rut.png")
+				//const rutMaterial = new THREE.MeshBasic
+
 				//
 
 				renderer = new THREE.WebGLRenderer();
@@ -106,7 +109,7 @@
 				container.appendChild( stats.dom );
 
 				const loader = new PLYLoader();
-				loader.load( 'models/rut.ply', function ( geometry ) {
+				loader.load( 'models/rut.fbx', function ( geometry ) {
 
 					createScene( geometry, cubeMaterial1, cubeMaterial2, cubeMaterial3 );
 
@@ -133,6 +136,7 @@
 			}
 
 			function createScene( geometry, m1, m2, m3 ) {
+				const textu = new THREE.TextureLoader().load("textures/rut.png")
 
 				geometry.computeVertexNormals();
 
