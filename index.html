@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Artificial Ingenuity</title>
+		<title>three.js webgl - materials - cube refraction [Lucy]</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<link type="text/css" rel="stylesheet" href="main.css">
@@ -9,6 +9,7 @@
 
 	<body>
 		<div id="info">
+			
 
 		</div>
 
@@ -105,7 +106,7 @@
 				container.appendChild( stats.dom );
 
 				const loader = new PLYLoader();
-				loader.load( 'models/Lucy100k.ply', function ( geometry ) {
+				loader.load( 'models/rut.fbx', function ( geometry ) {
 
 					createScene( geometry, cubeMaterial1, cubeMaterial2, cubeMaterial3 );
 
