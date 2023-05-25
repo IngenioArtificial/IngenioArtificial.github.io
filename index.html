@@ -59,7 +59,7 @@
 
 				//
 
-				const r = 'textures/cube/Park3Med/';
+				const r = 'textures/';
 
 				const urls = [
 					r + 'px.jpg', r + 'nx.jpg',
@@ -107,7 +107,7 @@
 				container.appendChild( stats.dom );
 
 				const loader = new PLYLoader();
-				loader.load( 'models/ply/binary/Lucy100k.ply', function ( geometry ) {
+				loader.load( 'models/Lucy100k.ply', function ( geometry ) {
 
 					createScene( geometry, cubeMaterial1, cubeMaterial2, cubeMaterial3 );
 
