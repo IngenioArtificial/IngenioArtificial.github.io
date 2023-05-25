@@ -29,6 +29,8 @@ html, body {
 }
 
 div.center{
+	display: flex;
+  justify-content: center;
 	width: 99.3%;
 	height: 100%h;
 	text-align: center;
