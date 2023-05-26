@@ -121,19 +121,15 @@
 
 				const fbxLoader = new FBXLoader()
 				const loader = new PLYLoader();
+
 				fbxLoader.load( 'models/snake.fbx', function ( geometry ) {
 					
-
 					createScene( geometry, cubeMaterial1, cubeMaterial2, cubeMaterial3 );
 
 				} );
 
 				document.addEventListener( 'mousemove', onDocumentMouseMove );
-
-				//
-
 				window.addEventListener( 'resize', onWindowResize );
-
 				document.addEventListener('click', onClick);
 
 			}
@@ -218,7 +214,7 @@
 				requestAnimationFrame( animate );
 
 				render();
-				stats.update();
+				//stats.update();
 
 			}
 
