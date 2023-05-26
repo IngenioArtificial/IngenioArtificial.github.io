@@ -59,7 +59,7 @@
 			animate();
 
 			function init() {
-
+				let rotate = 1;
 				container = document.createElement( 'div' );
 				container.setAttribute("id", "jonas")
 				document.body.appendChild( container );
@@ -134,6 +134,13 @@
 
 				window.addEventListener( 'resize', onWindowResize );
 
+				document.addEventListener('click', onClick)
+
+			}
+			function onClick() {
+				geometry.rotation.y = Math.PI / rotate;
+				geometry.rotation.y.needsUpdate = true;
+				rotate = rotate + 1;
 			}
 
 			function onWindowResize() {
