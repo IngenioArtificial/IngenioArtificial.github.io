@@ -54,12 +54,14 @@
 
 			let windowHalfX = window.innerWidth / 2;
 			let windowHalfY = window.innerHeight / 2;
-
+			
+			let rotate = 1;
+			let snakeMesh;
 			init();
 			animate();
 
 			function init() {
-				let rotate = 1;
+				
 				container = document.createElement( 'div' );
 				container.setAttribute("id", "jonas")
 				document.body.appendChild( container );
@@ -134,8 +136,8 @@
 
 			}
 			function onClick() {
-				geometry.rotation.y = Math.PI / rotate;
-				geometry.rotation.y.needsUpdate = true;
+				snakeMesh.rotation.y = Math.PI / rotate;
+				snakeMesh.rotation.y.needsUpdate = true;
 				rotate = rotate + 1;
 			}
 
@@ -171,8 +173,9 @@
 				//let mesh = new THREE.Mesh( geometry, m1 );
 				//mesh.scale.x = mesh.scale.y = mesh.scale.z = s;
 				geometry.scale.x = geometry.scale.y = geometry.scale.z = s;
-				geometry.rotation.y = Math.PI / 4;
-				scene.add(geometry);
+				//geometry.rotation.y = Math.PI / 4;
+				snakeMesh = geometry
+				scene.add(snakeMesh);
 
 				//mesh = new THREE.Mesh( geometry, m2 );
 				//mesh.position.x = - 1500;
@@ -235,6 +238,14 @@
 			}
 
 		</script>
+		<navbar>
+			<ul>
+		  		<li><a class="active" href="#home">Home</a></li>
+		 			<li><a href="#news">News</a></li>
+		  		<li><a href="#contact">Contact</a></li>
+		  		<li><a href="#about">About</a></li>
+			</ul>
+		</navbar>
 
 	</body>
 </html>
