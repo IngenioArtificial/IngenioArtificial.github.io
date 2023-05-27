@@ -127,11 +127,13 @@
 				const loader = new PLYLoader();
 
 				//fbxLoader.load( 'models/A.fbx', function ( geometry ) {
-				loader.load('models/artificialingenuityNew.ply', function ( geometry) {
+				for (let i = 1; i < 20; i++){
+					loader.load('models/textPLY/new/' + i + '.ply', function ( geometry) {
 
-					createScene( geometry, cubeMaterial1, cubeMaterial2, cubeMaterial3 );
+						createScene( geometry, cubeMaterial1, cubeMaterial2, cubeMaterial3 );
 
-				} );
+					} );
+				}
 
 				document.addEventListener( 'mousemove', onDocumentMouseMove );
 				window.addEventListener( 'resize', onWindowResize );
@@ -170,7 +172,7 @@
 
 				//geometry.computeVertexNormals();
 
-				const s = 60.0;
+				const s = 1.0;
 
 				//let rutMesh = new THREE.Mesh(geometry)
 
