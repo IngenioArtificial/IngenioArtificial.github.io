@@ -177,13 +177,14 @@
 
 
 				let mesh = new THREE.Mesh( geometry, m1 );
-				//mesh.scale.x = mesh.scale.y = mesh.scale.z = s;
-				geometry.scale.x = geometry.scale.y = geometry.scale.z = s;
+				mesh.scale.x = mesh.scale.y = mesh.scale.z = s;
+				//geometry.scale.x = geometry.scale.y = geometry.scale.z = s;
 				//geometry.rotation.y = Math.PI / 4;
 				//snakeMesh = geometry
 				//snakeMesh.
 				//snakeMesh = new THREE.Mesh(snakeMesh, m1);
-				scene.add(geometry);
+				//scene.add(geometry);
+				scene.add(mesh);
 
 				//mesh = new THREE.Mesh( geometry, m2 );
 				//mesh.position.x = - 1500;
