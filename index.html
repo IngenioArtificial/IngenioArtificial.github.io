@@ -168,7 +168,7 @@
 				geometry.traverse( function ( child ) {
 					child.computeFaceNormals();
 					child.material = new THREE.MeshPhongMaterial( { color: 0xccfffd, envMap: textureCube, refractionRatio: 0.985 } );
-				)}
+				});
 				//geometry.computeVertexNormals();
 				//geometry.material = new THREE.MeshPhongMaterial( { color: 0xccfffd, envMap: textureCube, refractionRatio: 0.985 } );
 				//geometry.computeFaceNormals();
