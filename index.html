@@ -139,7 +139,7 @@
 				//	} );
 				//}
 
-				objLoader.load( 'models/text2FixedOneObjectNewNoHistory.obj', function ( geometry ) {
+				objLoader.load( 'models/textFinal.obj', function ( geometry ) {
 
 						createScene( geometry, cubeMaterial1, cubeMaterial2, cubeMaterial3, textureCube);
 
@@ -171,18 +171,20 @@
 			function createScene( geometry, m1, m2, m3, textureCube) {
 				console.log(geometry);
 				console.log(m1);
-				geometry.traverse( function ( child ) {
-					if ( child instanceof THREE.Mesh ) {
-						//child.material = new THREE.MeshPhongMaterial( { color: 0xccfffd, envMap: textureCube, refractionRatio: 0.985 } );
-						child.material = m2;
+				//geometry.traverse( function ( child ) {
+				//	if ( child instanceof THREE.Mesh ) {
+				//		//child.material = new THREE.MeshPhongMaterial( { color: 0xccfffd, envMap: textureCube, refractionRatio: 0.985 } );
+				//		child.material = m2;
  						
  						//child.geometry.computeFaceNormals();
- 						child.geometry.computeVertexNormals();
+ 				//		child.geometry.computeVertexNormals();
 						
 
 
-                    }
-				});
+                //    }
+				//});
+				geometry.material = m2;
+				geometry.computeVertexNormals();
 				//geometry.computeVertexNormals();
 				//geometry.material = new THREE.MeshPhongMaterial( { color: 0xccfffd, envMap: textureCube, refractionRatio: 0.985 } );
 				//geometry.computeFaceNormals();
