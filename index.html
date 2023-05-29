@@ -160,9 +160,9 @@
 			}
 
 			function resize(item, index){
-				const s = 0.9;
+				let s = 0.9;
 				if (window.innerHeight > window.innerWidth){
-					const s = map(window.innerWidth);
+					s = map(window.innerWidth);
 				}
 				item.scale.set(s, s, s);
 			}
