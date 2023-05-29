@@ -129,15 +129,20 @@
 				const objLoader = new OBJLoader();
 
 				
-				for (let i = 1; i < 20; i++){
+				//for (let i = 1; i < 20; i++){
 					//loader.load('models/textPLY/new/' + i + '.ply', function ( geometry) {
 					//fbxLoader.load( 'models/objTEXT/New/' + i + '.obj', function ( geometry ) {
-					objLoader.load( 'models/objTEXT/newst/' + i + '.obj', function ( geometry ) {
+				//	objLoader.load( 'models/objTEXT/newst/' + i + '.obj', function ( geometry ) {
 
-						createScene( geometry, cubeMaterial1, cubeMaterial2, cubeMaterial3, textureCube);
+				//		createScene( geometry, cubeMaterial1, cubeMaterial2, cubeMaterial3, textureCube);
+				//	} );
+				//}
 
-					} );
-				}
+				objLoader.load( 'models/ArtificialIngenuity.obj', function ( geometry ) {
+
+					createScene( geometry, cubeMaterial1, cubeMaterial2, cubeMaterial3, textureCube);
+
+				} );
 
 
 				document.addEventListener( 'mousemove', onDocumentMouseMove );
@@ -203,7 +208,7 @@
 				//let mesh = new THREE.Mesh( geometry, m2 );
 				//mesh.scale.x = mesh.scale.y = mesh.scale.z = s;
 				geometry.scale.x = geometry.scale.y = geometry.scale.z = s;
-				//geometry.rotation.y = Math.PI / 4;
+				geometry.rotation.y = Math.PI / 2;
 				//snakeMesh = geometry
 				//snakeMesh.
 				//snakeMesh = new THREE.Mesh(snakeMesh, m1);
