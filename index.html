@@ -169,8 +169,8 @@
 			}
 
 			function createScene( geometry, m1, m2, m3, textureCube) {
-				console.log(geometry);
-				console.log(m1);
+				//console.log(geometry);
+				//console.log(m1);
 				//geometry.traverse( function ( child ) {
 				//	if ( child instanceof THREE.Mesh ) {
 				//		//child.material = new THREE.MeshPhongMaterial( { color: 0xccfffd, envMap: textureCube, refractionRatio: 0.985 } );
@@ -199,7 +199,7 @@
 
 				//geometry.computeVertexNormals();
 
-				const s = 1.0;
+				const s = 300.0;
 
 				//let rutMesh = new THREE.Mesh(geometry)
 
@@ -207,7 +207,7 @@
 
 				//let mesh = new THREE.Mesh( geometry, m2 );
 				//mesh.scale.x = mesh.scale.y = mesh.scale.z = s;
-				//geometry.scale.x = geometry.scale.y = geometry.scale.z = s;
+				geometry.scale.x = geometry.scale.y = geometry.scale.z = s;
 				//geometry.rotation.y = Math.PI / 4;
 				//snakeMesh = geometry
 				//snakeMesh.
