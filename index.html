@@ -111,10 +111,6 @@
 				const cubeMaterial2 = new THREE.MeshPhongMaterial( { color: 0xccfffd, envMap: textureCube, refractionRatio: 0.985 } );
 				const cubeMaterial1 = new THREE.MeshPhongMaterial( { color: 0xffffff, envMap: textureCube, refractionRatio: 0.98 } );
 
-				//const textu = new THREE.TextureLoader().load("textures/rut.png")
-				//const rutMaterial = new THREE.MeshBasic
-
-				//
 
 				renderer = new THREE.WebGLRenderer();
 				renderer.setPixelRatio( window.devicePixelRatio );
@@ -128,7 +124,7 @@
 				const loader = new PLYLoader();
 				const objLoader = new OBJLoader();
 
-				
+				// Loading all individual letters and placing them in the scene
 				for (let i = 1; i < 20; i++){
 					//loader.load('models/textPLY/new/' + i + '.ply', function ( geometry) {
 					//fbxLoader.load( 'models/objTEXT/New/' + i + '.obj', function ( geometry ) {
@@ -137,7 +133,7 @@
 						createScene( geometry, cubeMaterial1, cubeMaterial2, cubeMaterial3, textureCube);
 					} );
 				}
-				
+
 
 				//objLoader.load( 'models/ArtificialIngenuity.obj', function ( geometry ) {
 
@@ -184,61 +180,16 @@
 
                     }
 				});
-				//geometry.material = m2;
-				//geometry.geometry.computeVertexNormals();
-				//geometry.computeVertexNormals();
-				//geometry.material = new THREE.MeshPhongMaterial( { color: 0xccfffd, envMap: textureCube, refractionRatio: 0.985 } );
-				//geometry.computeFaceNormals();
-				//geometry.computeVertexNormals();
 
-				
-
-
-
-				//const textu = new THREE.TextureLoader().load("textures/rut.png")
-
-
-				//geometry.computeVertexNormals();
 
 				const s = 0.9;
 
-				//let rutMesh = new THREE.Mesh(geometry)
-
-
-
-				//let mesh = new THREE.Mesh( geometry, m2 );
-				//mesh.scale.x = mesh.scale.y = mesh.scale.z = s;
 				geometry.scale.x = geometry.scale.y = geometry.scale.z = s;
-				geometry.rotation.y = Math.PI / 2;
+				//geometry.rotation.y = Math.PI / 2;
 				//snakeMesh = geometry
 				//snakeMesh.
 				//snakeMesh = new THREE.Mesh(snakeMesh, m1);
 				scene.add(geometry);
-				//scene.add(mesh);
-
-				//mesh = new THREE.Mesh( geometry, m2 );
-				//mesh.position.x = - 1500;
-				//mesh.scale.x = mesh.scale.y = mesh.scale.z = s;
-				//scene.add( mesh );
-
-				//mesh = new THREE.Mesh( geometry, m3 );
-				//mesh.position.x = 1500;
-				//mesh.scale.x = mesh.scale.y = mesh.scale.z = s;
-				//scene.add( mesh );
-
-				//var textureLoader = new THREE.TextureLoader();
-				//textureLoader.setCrossOrigin("anonymous");
-				//textureLoader.load("textures/rut.png", function (texture){
-				//	mesh = geometry
-				//	mesh.traverse(function (child) {
-//
-				//	if (child instanceof THREE.Mesh) {
-
-				//		child.material.map = texture;
-				//		child.material.needsUpdate = true;
-				//		}
-				//	})
-				//})
 
 			}
 
