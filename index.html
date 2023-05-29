@@ -45,6 +45,7 @@
 
 			import { PLYLoader } from 'three/addons/loaders/PLYLoader.js';
 			import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
+			import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 
 			let container, stats;
 
@@ -123,8 +124,9 @@
 				//stats = new Stats();
 				//container.appendChild( stats.dom );
 
-				const fbxLoader = new FBXLoader()
+				const fbxLoader = new FBXLoader();
 				const loader = new PLYLoader();
+				const objLoader = new OBJLoader();
 
 				
 				for (let i = 1; i < 20; i++){
