@@ -148,9 +148,12 @@
 
 			}
 			function onClick() {
-				snakeMesh.rotation.y = Math.PI / rotate;
-				snakeMesh.rotation.y.needsUpdate = true;
-				rotate = rotate + 1;
+				const s = 0.5;
+				snakeMesh.scale.x = snakeMesh.scale.y = snakeMesh.scale.z = s;
+				snakeMesh.scale.x.needsUpdate = true;
+				snakeMesh.scale.y.needsUpdate = true;
+				snakeMesh.scale.z.needsUpdate = true;
+				
 			}
 
 			function onWindowResize() {
@@ -187,10 +190,10 @@
 				geometry.scale.x = geometry.scale.y = geometry.scale.z = s;
 				geometry.position.y = 100;
 				//geometry.rotation.y = Math.PI / 2;
-				//snakeMesh = geometry
+				snakeMesh = geometry
 				//snakeMesh.
 				//snakeMesh = new THREE.Mesh(snakeMesh, m1);
-				scene.add(geometry);
+				scene.add(snakeMesh);
 
 			}
 
