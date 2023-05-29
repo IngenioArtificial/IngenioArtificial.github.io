@@ -126,9 +126,10 @@
 				const fbxLoader = new FBXLoader()
 				const loader = new PLYLoader();
 
-				//fbxLoader.load( 'models/A.fbx', function ( geometry ) {
+				
 				for (let i = 1; i < 20; i++){
-					loader.load('models/textPLY/new/' + i + '.ply', function ( geometry) {
+					//loader.load('models/textPLY/new/' + i + '.ply', function ( geometry) {
+					fbxLoader.load( 'models/' + i + '.obj', function ( geometry ) {
 
 						createScene( geometry, cubeMaterial1, cubeMaterial2, cubeMaterial3 );
 
@@ -162,7 +163,9 @@
 				console.log(geometry);
 				console.log(m1);
 				//geometry.computeVertexNormals();
+				geometry.material = new THREE.MeshPhongMaterial( { color: 0xccfffd, envMap: textureCube, refractionRatio: 0.985 } );
 				geometry.computeFaceNormals();
+				geometry.computeVertexNormals();
 
 				
 
@@ -179,8 +182,8 @@
 
 
 
-				let mesh = new THREE.Mesh( geometry, m2 );
-				mesh.scale.x = mesh.scale.y = mesh.scale.z = s;
+				//let mesh = new THREE.Mesh( geometry, m2 );
+				//mesh.scale.x = mesh.scale.y = mesh.scale.z = s;
 				//geometry.scale.x = geometry.scale.y = geometry.scale.z = s;
 				//geometry.rotation.y = Math.PI / 4;
 				//snakeMesh = geometry
