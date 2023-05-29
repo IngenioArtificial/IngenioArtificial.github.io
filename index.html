@@ -57,6 +57,8 @@
 
 			let windowHalfX = window.innerWidth / 2;
 			let windowHalfY = window.innerHeight / 2;
+
+			const textModels = [];
 			
 			let rotate = 1;
 			let snakeMesh;
@@ -149,11 +151,17 @@
 			}
 			function onClick() {
 				const s = 0.5;
-				snakeMesh.scale.set(s, s, s);
+				textModels.forEach(resize);
+				//snakeMesh.scale.set(s, s, s);
 				//snakeMesh.scale.x.needsUpdate = true;
 				//snakeMesh.scale.y.needsUpdate = true;
 				//snakeMesh.scale.z.needsUpdate = true;
 				
+			}
+
+			function rezise(item, index){
+				const s = 0.5;
+				item.scale.set(s, s, s);
 			}
 
 			function onWindowResize() {
@@ -190,10 +198,10 @@
 				geometry.scale.x = geometry.scale.y = geometry.scale.z = s;
 				geometry.position.y = 100;
 				//geometry.rotation.y = Math.PI / 2;
-				snakeMesh = geometry
 				//snakeMesh.
 				//snakeMesh = new THREE.Mesh(snakeMesh, m1);
-				scene.add(snakeMesh);
+				textModels.push(geometry);
+				scene.add(geometry);
 
 			}
 
