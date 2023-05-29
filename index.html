@@ -160,11 +160,17 @@
 			}
 
 			function resize(item, index){
-				const s = 0.5;
+				const s = 0.9;
+				if (window.innerHeight > window.innerWidth){
+					s = map(window.innerWidth);
+				}
 				item.scale.set(s, s, s);
 			}
 
 			function onWindowResize() {
+
+				textModels.forEach(resize);
+
 
 				windowHalfX = window.innerWidth / 2;
 				windowHalfY = window.innerHeight / 2;
@@ -174,6 +180,14 @@
 
 				renderer.setSize( window.innerWidth, window.innerHeight );
 
+			}
+
+			function map(x){
+				let out_min = 0.0;
+				let out_max = 1.0;
+				let in_min = 0.0;
+				let in_max = 3840.0;
+  				return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 			}
 
 			function createScene( geometry, m1, m2, m3, textureCube) {
