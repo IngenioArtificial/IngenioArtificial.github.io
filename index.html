@@ -166,8 +166,15 @@
 				console.log(geometry);
 				console.log(m1);
 				geometry.traverse( function ( child ) {
-					child.computeFaceNormals();
-					child.material = new THREE.MeshPhongMaterial( { color: 0xccfffd, envMap: textureCube, refractionRatio: 0.985 } );
+					if ( child instanceof THREE.Mesh ) {
+						child.material = new THREE.MeshPhongMaterial( { color: 0xccfffd, envMap: textureCube, refractionRatio: 0.985 } );
+ 						
+ 						child.geometry.computeFaceNormals();
+ 						child.geometry.computeVertexNormals();
+						
+
+
+                    }
 				});
 				//geometry.computeVertexNormals();
 				//geometry.material = new THREE.MeshPhongMaterial( { color: 0xccfffd, envMap: textureCube, refractionRatio: 0.985 } );
