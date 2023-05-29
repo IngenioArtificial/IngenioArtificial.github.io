@@ -149,10 +149,10 @@
 			}
 			function onClick() {
 				const s = 0.5;
-				snakeMesh.scale.x = snakeMesh.scale.y = snakeMesh.scale.z = s;
-				snakeMesh.scale.x.needsUpdate = true;
-				snakeMesh.scale.y.needsUpdate = true;
-				snakeMesh.scale.z.needsUpdate = true;
+				snakeMesh.scale.set(s, s, s);
+				//snakeMesh.scale.x.needsUpdate = true;
+				//snakeMesh.scale.y.needsUpdate = true;
+				//snakeMesh.scale.z.needsUpdate = true;
 				
 			}
 
