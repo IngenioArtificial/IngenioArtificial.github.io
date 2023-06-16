@@ -63,6 +63,30 @@
 
 			const textModels = [];
 			
+
+
+			// Variables for spinning and moving text within bounding box
+			const objectSize = 1;
+			const boxWidth = 4;
+			const boxHeight = 4;
+			const boxDepth = 4;
+
+			let xPos = 0;
+			let yPos = 0;
+			let zPos = 0;
+
+			// Object movement speed and direction
+			let xSpeed = 0.02;
+			let ySpeed = 0.02;
+			let zSpeed = 0.02;
+
+			// Object rotation angles
+			let xAngle = 0;
+			let yAngle = 0;
+			let zAngle = 0;
+
+
+
 			let rotate = 1;
 			let snakeMesh;
 			init();
@@ -236,17 +260,56 @@
 			}
 
 			//
+			function textMove(){
+				xPos += xSpeed;
+				yPos += ySpeed;
+				zPos += zSpeed;
+
+				// Check for collision with walls
+				if (xPos <= -boxWidth / 2 || xPos >= boxWidth / 2 - objectSize) {
+					xSpeed *= -1; // Reverse horizontal direction
+				}
+				if (yPos <= -boxHeight / 2 || yPos >= boxHeight / 2 - objectSize) {
+					ySpeed *= -1; // Reverse vertical direction
+				}
+				if (zPos <= -boxDepth / 2 || zPos >= boxDepth / 2 - objectSize) {
+					zSpeed *= -1; // Reverse depth direction
+				}
+				
+				// Update rotation
+				xAngle += 0.01;
+				yAngle += 0.01;
+				zAngle += 0.01;
+
+				// Update each model
+				textModels.forEach(rotateAndMoveText);
+			}
+
+			function rotateAndMoveText(item, index){
+				item.position.set(xPos, yPos, zPos);
+  				item.rotation.set(xAngle, yAngle, zAngle);
+			}
+
+
 
 			function animate() {
 
 				requestAnimationFrame( animate );
-
+				textMove();
 				render();
 				//stats.update();
 
 			}
 
+			
+
+
+
 			function render() {
+
+
+				// For rotating text and moving within bounding box
+				
 
 				const timer = - 0.002 * Date.now();
 
