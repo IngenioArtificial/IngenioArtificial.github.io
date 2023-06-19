@@ -101,7 +101,7 @@
 			function init() {
 				
 				container = document.createElement( 'div' );
-				container.setAttribute("id", "jonas")
+				container.setAttribute("id", "container");
 				document.body.appendChild( container );
 
 				camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 100000 );
@@ -155,6 +155,7 @@
 				renderer = new THREE.WebGLRenderer();
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
+				rendered.domElement.id = 'canvas1';
 				container.appendChild( renderer.domElement );
 
 				//stats = new Stats();
