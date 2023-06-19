@@ -52,10 +52,10 @@ html, body {
 	background: rgba(0,0,0,0.0);
 }
 #overlay button {
-	background: transparent;
+	background-color: #fffad2;
 	border: 1px solid rgb(255, 255, 255);
 	border-radius: 4px;
-	color: #fffad2;
+	color: #fffad3;
 	padding: 12px 18px;
 	text-transform: uppercase;
 	cursor: pointer;
