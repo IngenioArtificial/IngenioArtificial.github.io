@@ -221,7 +221,8 @@
 				camera.aspect = window.innerWidth / window.innerHeight;
 				camera.updateProjectionMatrix();
 
-				renderer.setSize( window.innerWidth, window.innerHeight );
+				//renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer.setSize( window.innerWidth, 500 );
 
 			}
 
@@ -304,7 +305,7 @@
 			}
 
 			function rotateAndMoveText(item, index){
-				item.position.set(xPos, yPos, zPos);
+				item.position.set(xPos, yPos, 0);
   				item.rotation.set(xAngle, yAngle, zAngle);
 			}
 
