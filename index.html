@@ -103,11 +103,12 @@
 			//}
 
 			function menu() {
-				var but = document.getElementById('menuButton');
-				but.setAtrribute("color", "#ddddd");
+				document.getElementById('menuButton').setAtrribute("color", "#ddddd");
 			}
 
 			function init() {
+
+				document.getElementById("menuButton").addEventListener("click", menu);
 				
 				container = document.createElement( 'div' );
 				container.setAttribute("id", "container");
