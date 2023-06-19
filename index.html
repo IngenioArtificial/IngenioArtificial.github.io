@@ -117,10 +117,10 @@
 				//	r + 'pz.jpg', r + 'nz.jpg'
 				//];
 
-				//renderer.setClearColorHex( 0xffffff, 1 );
-				const textureCube = new THREE.CubeTextureLoader().load( urls );
-				textureCube.colorSpace = THREE.SRGBColorSpace;
-				textureCube.mapping = THREE.CubeRefractionMapping;
+				// UNCOMMENT FOR USING BACKGROUND PICTURES
+				//const textureCube = new THREE.CubeTextureLoader().load( urls );
+				//textureCube.colorSpace = THREE.SRGBColorSpace;
+				//textureCube.mapping = THREE.CubeRefractionMapping;
 
 				scene = new THREE.Scene();
 				//scene.background = textureCube;
