@@ -144,9 +144,12 @@
 
 				// material samples
 
-				const cubeMaterial3 = new THREE.MeshPhongMaterial( { color: 0xccddff, envMap: textureCube, refractionRatio: 0.98, reflectivity: 0.9 } );
-				const cubeMaterial2 = new THREE.MeshPhongMaterial( { color: 0xccfffd, envMap: textureCube, refractionRatio: 0.985 } );
-				const cubeMaterial1 = new THREE.MeshPhongMaterial( { color: 0xffffff, envMap: textureCube, refractionRatio: 0.98 } );
+				//const cubeMaterial3 = new THREE.MeshPhongMaterial( { color: 0xccddff, envMap: textureCube, refractionRatio: 0.98, reflectivity: 0.9 } );
+				//const cubeMaterial2 = new THREE.MeshPhongMaterial( { color: 0xccfffd, envMap: textureCube, refractionRatio: 0.985 } );
+				//const cubeMaterial1 = new THREE.MeshPhongMaterial( { color: 0xffffff, envMap: textureCube, refractionRatio: 0.98 } );
+				const cubeMaterial1 = new THREE.MeshPhongMaterial( { color: 0xffffff, refractionRatio: 0.98 } );
+				const cubeMaterial2 = new THREE.MeshPhongMaterial( { color: 0xccfffd, refractionRatio: 0.985 } );
+				const cubeMaterial3 = new THREE.MeshPhongMaterial( { color: 0xccddff, refractionRatio: 0.98, reflectivity: 0.9 } );
 
 
 				renderer = new THREE.WebGLRenderer();
@@ -167,7 +170,7 @@
 					//fbxLoader.load( 'models/objTEXT/New/' + i + '.obj', function ( geometry ) {
 					objLoader.load( 'models/objTEXT/newst/' + i + '.obj', function ( geometry ) {
 
-						createScene( geometry, cubeMaterial1, cubeMaterial2, cubeMaterial3, textureCube);
+						createScene( geometry, cubeMaterial1, cubeMaterial2,cubeMaterial3);
 					} );
 				}
 
@@ -225,7 +228,7 @@
   				return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 			}
 
-			function createScene( geometry, m1, m2, m3, textureCube) {
+			function createScene( geometry, m1, m2, m3) {
 				//console.log(geometry);
 				//console.log(m1);
 				geometry.traverse( function ( child ) {
