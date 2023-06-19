@@ -155,7 +155,8 @@
 
 				renderer = new THREE.WebGLRenderer();
 				renderer.setPixelRatio( window.devicePixelRatio );
-				renderer.setSize( window.innerWidth, window.innerHeight );
+				//renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer.setSize( window.innerWidth, 500 );
 				renderer.domElement.id = 'threeJSCanvas';
 				container.appendChild( renderer.domElement );
 
