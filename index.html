@@ -20,8 +20,8 @@
 		  		<li><a href="IngenioArtificial.github.io/about.html">About</a></li>
 			</ul>
 		</navbar>
-		<div id="info">
-			
+		<div id="overlay">
+			This div is over the canvas, hopefully!
 
 		</div>
 
@@ -155,8 +155,10 @@
 				renderer = new THREE.WebGLRenderer();
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
-				rendered.domElement.id = 'canvas1';
+				renderer.domElement.id = 'threeJSCanvas';
 				container.appendChild( renderer.domElement );
+
+				$("#button").appendTo($("#container"));
 
 				//stats = new Stats();
 				//container.appendChild( stats.dom );

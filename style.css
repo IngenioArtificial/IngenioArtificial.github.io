@@ -32,6 +32,13 @@ html, body {
 .button1 {
 	background-color: #4CAF50;
 }
+
+#contrainer {
+	position: relative;
+}
+#threeJSCanvas, #overlay {
+	position: absolute;
+} 
  
 
 
