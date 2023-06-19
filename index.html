@@ -22,8 +22,8 @@
 		</navbar> -->
 		<div id="overlay">
 			<div id="overlayDiv">
-				<button class="button button1">Menu</button>
-			</div>
+				<button id='menuButton' class="button button1" onclick="menu()">Menu</button>
+			</div> 
 
 			This div is over the canvas, hopefully!
 
@@ -101,6 +101,11 @@
 				//$("#button").appendTo($("#jonas"));
 				//$("#button").prependTo($("#jonas"));
 			//}
+
+			function menu() {
+				var but = document.getElementById('menuButton');
+				but.setAtrribute("color", "#ddddd");
+			}
 
 			function init() {
 				
