@@ -34,6 +34,7 @@ html, body {
 	position: top;
 	margin-left: 10px;
 } /* Green */
+
 .button2 {
 	background-color: #008CBA;
 } /* Blue */
@@ -47,6 +48,11 @@ html, body {
 #overlay {
 	position: absolute;
 	background: rgba(0,0,0,0.0);
+}
+#overlayDiv {
+	position: absolute;
+	left: 0;
+	top: 0;
 }
  
 
