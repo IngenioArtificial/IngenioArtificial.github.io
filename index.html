@@ -106,10 +106,10 @@
 				var k = 0;
 			}
 			function buttonMouseOver() {
-				document.getElementById("menuButton").style.backgroundColor = "red";
+				document.getElementById("menuButton").style.backgroundColor = "green";
 			}
 			function buttonMouseOut() {
-				document.getElementById("menuButton").style.backgroundColor = "green";
+				document.getElementById("menuButton").style.backgroundColor = "transparent";
 			}
 
 			function init() {
@@ -117,6 +117,7 @@
 				document.getElementById("menuButton").addEventListener("click", menu);
 				document.getElementById("menuButton").addEventListener("mouseover", buttonMouseOver);
 				document.getElementById("menuButton").addEventListener("mouseout", buttonMouseOut);
+				document.getElementById("menuButton").setAttribute("color", "black");
 				
 				container = document.createElement( 'div' );
 				container.setAttribute("id", "container");
