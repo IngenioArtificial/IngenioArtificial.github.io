@@ -280,11 +280,21 @@
 				if (zPos <= -boxDepth / 2 || zPos >= boxDepth / 2 - objectSize) {
 					zSpeed *= -1; // Reverse depth direction
 				}
+
+				var min = 0.001;
+		        var max = 0.01;
+		        randX = Math.random() * (max - min) + min;
+		        var min = 0.001;
+		        var max = 0.01;
+		        randY = Math.random() * (max - min) + min;
+		        var min = 0.001;
+		        var max = 0.01;
+		        randZ = Math.random() * (max - min) + min;
 				
 				// Update rotation
-				xAngle += 0.001;
-				yAngle += 0.001;
-				zAngle += 0.001;
+				xAngle += randX;
+				yAngle += randY;
+				zAngle += randZ;
 
 				// Update each model
 				textModels.forEach(rotateAndMoveText);
