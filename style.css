@@ -31,7 +31,12 @@ html, body {
 }
 .button1 {
 	background-color: #4CAF50;
-}
+	position: top;
+	margin-left: 10px;
+} /* Green */
+.button2 {
+	background-color: #008CBA;
+} /* Blue */
 
 #container {
 	position: relative;
