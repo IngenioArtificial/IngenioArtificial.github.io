@@ -105,10 +105,18 @@
 			function menu() {
 				document.getElementById('menuButton').setAttribute("color", "#ddddd");
 			}
+			function buttonMouseOver() {
+				document.getElementById("menuButton").style.color = "red";
+			}
+			function buttonMouseOut() {
+				document.getElementById("menuButton").style.color = "transparent";
+			}
 
 			function init() {
 
 				document.getElementById("menuButton").addEventListener("click", menu);
+				document.getElementById("menuButton").addEventListener("mouseover", buttonMouseOver);
+				document.getElementById("menuButton").addEventListener("mouseover", buttonMouseOut);
 				
 				container = document.createElement( 'div' );
 				container.setAttribute("id", "container");
