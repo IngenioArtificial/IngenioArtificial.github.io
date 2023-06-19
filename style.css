@@ -36,9 +36,13 @@ html, body {
 #contrainer {
 	position: relative;
 }
-#threeJSCanvas, #overlay {
+#threeJSCanvas {
 	position: absolute;
 } 
+#overlay {
+	position: absolute;
+	background: rgba(0,0,0,0.0);
+}
  
 
 
