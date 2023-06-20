@@ -113,7 +113,13 @@
 			//}
 
 			function menu() {
-				var k = 0;
+				var el = document.getElementById("overlayMenu");
+				if (el.style.display == "none"){
+					el.style.display = "block";
+				}
+				else {
+					el.style.display = "none";
+				}
 			}
 			function buttonMouseOver() {
 				document.getElementById("menuButton").style.backgroundColor = "green";

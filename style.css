@@ -80,9 +80,9 @@ html, body {
 }
 
 .button-container-first {
-	margin-top: 40vh;
   padding: 12px 24px;
   margin: 0 auto;
+  margin-top: 40vh;
   width: 100%;
 }
 
