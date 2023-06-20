@@ -61,11 +61,26 @@ html, body {
 	cursor: pointer;
 	font-family: helvetica, sans-serif;
 }
+
 #overlayDiv {
 	position: absolute;
 	left: 0;
 	top: 0;
 	color: #fffad3;
+}
+#overlayMenu {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+#overlayMenu button {
+	background-color: transparent;
+	border: 1px solid rgb(255, 255, 255);
+	border-radius: 4px;
+	color: rgb(255, 209, 130);
+	padding: 12px 18px;
+	text-transform: uppercase;
+	cursor: pointer;
+	font-family: helvetica, sans-serif;
 }
  
 
