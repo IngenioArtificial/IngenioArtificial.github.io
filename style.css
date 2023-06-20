@@ -71,7 +71,7 @@ html, body {
 
 
 #overlayMenu {
-	display: block;
+	display: none;
 	justify-content: center;
 	width: 100%;
 	text-align: center;
