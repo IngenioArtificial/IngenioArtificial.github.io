@@ -69,13 +69,18 @@ html, body {
 	color: #fffad3;
 }
 #overlayMenu {
-	width: 100%;
-	display: flex;
+	display: block;
 	justify-content: center;
+	width: 100%;
+	text-align: center;
+	min-height:	100%;
+	margin: 0 auto;
 }
 
 .button-container {
   padding: 12px 24px;
+  margin: 0 auto;
+  width: 100%;
 }
 .button-container:not(:last-child) {
   border-right: 1px solid #ddd;
