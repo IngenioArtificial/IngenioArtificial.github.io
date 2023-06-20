@@ -131,12 +131,21 @@
 			}
 
 			function futureless() {
+				event.cancelBubble = true;
+				if(event.stopPropagation) event.stopPropagation();
+
 				window.open("https://www.futurelessfestival.com/");
 			}
 			function instagram() {
+				event.cancelBubble = true;
+				if(event.stopPropagation) event.stopPropagation();
+
 				window.open("https://www.instagram.com/artificialingenuity/");
 			}
 			function about() {
+				event.cancelBubble = true;
+				if(event.stopPropagation) event.stopPropagation();
+				
 				window.open("IngenioArtificial.github.io/about.html");
 			}
 
