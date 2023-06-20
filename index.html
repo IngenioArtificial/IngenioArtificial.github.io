@@ -27,13 +27,13 @@
 
 			<div id="overlayMenu">
 				<div class="button-container-first">
-					<button id='menuOption' class="button button1" href="https://www.futurelessfestival.com/" target="_blank"><strong>Futureless Festival</strong></button>
+					<button id='menuOption1' class="button button1" href="https://www.futurelessfestival.com/" target="_blank"><strong>Futureless Festival</strong></button>
 				</div>
 				<div class="button-container">
-					<button id='menuOption' class="button button1" href="https://www.instagram.com/artificialingenuity/" target="_blank"><strong>Instagram</strong></button>
+					<button id='menuOption2' class="button button1" href="https://www.instagram.com/artificialingenuity/" target="_blank"><strong>Instagram</strong></button>
 				</div>
 				<div class="button-container">
-					<button id='menuOption' class="button button1" href="IngenioArtificial.github.io/about.html"><strong>About</strong></button>
+					<button id='menuOption3' class="button button1" href="IngenioArtificial.github.io/about.html"><strong>About</strong></button>
 				</div>
 			</div>
 
@@ -130,7 +130,22 @@
 				document.getElementById("menuButton").style.backgroundColor = "transparent";
 			}
 
+			function futureless() {
+				window.open("https://www.futurelessfestival.com/");
+			}
+			function instagram() {
+				window.open("https://www.instagram.com/artificialingenuity/");
+			}
+			function about() {
+				window.open("IngenioArtificial.github.io/about.html");
+			}
+
 			function init() {
+
+				document.getElementById("menuOption1").addEventListener("click", futureless);
+				document.getElementById("menuOption2").addEventListener("click", instagram);
+				document.getElementById("menuOption3").addEventListener("click", about);
+
 
 				document.getElementById("overlayMenu").style.display = "none";
 				document.getElementById("menuButton").addEventListener("click", menu);
