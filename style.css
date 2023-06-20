@@ -68,6 +68,8 @@ html, body {
 	top: 0;
 	color: #fffad3;
 }
+
+
 #overlayMenu {
 	display: block;
 	justify-content: center;
@@ -75,6 +77,13 @@ html, body {
 	text-align: center;
 	min-height:	100%;
 	margin: 0 auto;
+}
+
+.button-container-first {
+	margin-top: 40vh;
+  padding: 12px 24px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .button-container {
