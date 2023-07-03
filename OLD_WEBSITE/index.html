@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv='cache-control' content='no-cache'> 
+		<meta http-equiv='expires' content='0'> 
+		<meta http-equiv='pragma' content='no-cache'>
+		<title>three.js webgl - materials - cube refraction [Lucy]</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link type="text/css" rel="stylesheet" href="main.css">
+		<link type="text/css" rel="stylesheet" href="style.css"
+	</head>
+
+	<body>
+		<!--<navbar>
+			<ul>
+		  		<li><a class="active" href="#home">Home</a></li>
+		 			<li><a href="https://www.futurelessfestival.com/" target="_blank">Futureless Festival</a></li>
+		  		<li><a href="https://www.instagram.com/artificialingenuity/" target="_blank">Instagram</a></li>
+		  		<li><a href="IngenioArtificial.github.io/about.html">About</a></li>
+			</ul>
+		</navbar> -->
+		<div id="overlay">
+			<div id="overlayDiv">
+				<button id='menuButton' class="button button1"><strong>Menu</strong></button>
+			</div> 
+
+			<div id="overlayMenu">
+				<div class="button-container-first">
+					<button id='menuOption1' class="button button1" href="https://www.futurelessfestival.com/" target="_blank"><strong>Futureless Festival</strong></button>
+				</div>
+				<div class="button-container">
+					<button id='menuOption2' class="button button1" href="https://www.instagram.com/artificialingenuity/" target="_blank"><strong>Instagram</strong></button>
+				</div>
+				<div class="button-container">
+					<button id='menuOption3' class="button button1" href="IngenioArtificial.github.io/about.html"><strong>About</strong></button>
+				</div>
+			</div>
+
+		</div>
+
+		<!--<button id="button" class="button button1">Green</button> -->
+
+		<!-- Import maps polyfill -->
+		<!-- Remove this when import maps will be widely supported -->
+		<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+		<script type="importmap">
+			{
+				"imports": {
+					"three": "../build/three.module.js",
+					"three/addons/": "./jsm/"
+				}
+			}
+		</script>
+
+		<script type="module">
+
+			import * as THREE from 'three';
+			//import Stats from 'three/addons/stats.module.js';
+
+			import { PLYLoader } from 'three/addons/loaders/PLYLoader.js';
+			import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
+			import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
+
+			let container, stats;
+
+			let camera, scene, renderer;
+
+			let pointLight;
+
+			let mouseX = 0, mouseY = 0;
+
+			let windowHalfX = window.innerWidth / 2;
+			let windowHalfY = window.innerHeight / 2;
+
+			const textModels = [];
+			
+
+
+			// Variables for spinning and moving text within bounding box
+			const objectSize = 1;
+			const boxWidth = 1000;
+			const boxHeight = 1000;
+			const boxDepth = 1000;
+
+			let xPos = 0;
+			let yPos = 0;
+			let zPos = 0;
+
+			// Object movement speed and direction
+			let xSpeed = 1.0;
+			let ySpeed = 1.0;
+			let zSpeed = 1.0;
+
+			// Object rotation angles
+			let xAngle = 0;
+			let yAngle = 0;
+			let zAngle = 0;
+
+
+
+			let rotate = 1;
+			let snakeMesh;
+			init();
+			//moveContent();
+			animate();
+
+			//function moveContent(){
+				//$("#button").appendTo($("#jonas"));
+				//$("#button").prependTo($("#jonas"));
+			//}
+
+			function menu() {
+				var el = document.getElementById("overlayMenu");
+				if (el.style.display == "none"){
+					el.style.display = "block";
+					el.style.background = "rgba(0, 0, 0, 0.5)";
+				}
+				else {
+					el.style.display = "none";
+					el.style.background = "rgba(0, 0, 0, 0)";
+				}
+			}
+			function buttonMouseOver() {
+				document.getElementById("menuButton").style.backgroundColor = "green";
+			}
+			function buttonMouseOut() {
+				document.getElementById("menuButton").style.backgroundColor = "transparent";
+			}
+
+			function futureless() {
+				event.cancelBubble = true;
+				if(event.stopPropagation) event.stopPropagation();
+
+				window.open("https://www.futurelessfestival.com/");
+			}
+			function instagram() {
+				event.cancelBubble = true;
+				if(event.stopPropagation) event.stopPropagation();
+
+				window.open("https://www.instagram.com/artificialingenuity/");
+			}
+			function about() {
+				event.cancelBubble = true;
+				if(event.stopPropagation) event.stopPropagation();
+
+				location.replace("IngenioArtificial.github.io/about.html");
+			}
+
+			function init() {
+
+				document.getElementById("menuOption1").addEventListener("click", futureless);
+				document.getElementById("menuOption2").addEventListener("click", instagram);
+				document.getElementById("menuOption3").addEventListener("click", about);
+
+
+				document.getElementById("overlayMenu").style.display = "none";
+				document.getElementById("menuButton").addEventListener("click", menu);
+				document.getElementById("menuButton").addEventListener("mouseover", buttonMouseOver);
+				document.getElementById("menuButton").addEventListener("mouseout", buttonMouseOut);
+				document.getElementById("overlayMenu").addEventListener("click", menu);
+				//document.getElementById("menuButton").setAttribute("color", "black");
+				
+				container = document.createElement( 'div' );
+				container.setAttribute("id", "container");
+				document.body.appendChild( container );
+
+				camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 100000 );
+				camera.position.z = - 4000;
+
+				//
+
+				const r = 'textures/';
+
+				//const urls = [
+				//	r + 'px.jpg', r + 'nx.jpg',
+				//	r + 'py.jpg', r + 'ny.jpg',
+				//	r + 'pz.jpg', r + 'nz.jpg'
+				//];
+
+				// UNCOMMENT FOR USING BACKGROUND PICTURES
+				//const textureCube = new THREE.CubeTextureLoader().load( urls );
+				//textureCube.colorSpace = THREE.SRGBColorSpace;
+				//textureCube.mapping = THREE.CubeRefractionMapping;
+
+				scene = new THREE.Scene();
+				//scene.background = textureCube;
+				scene.background = new THREE.Color(0xf2f2f2);
+
+				// LIGHTS
+
+				const ambient = new THREE.AmbientLight( 0xffffff );
+				scene.add( ambient );
+
+				pointLight = new THREE.PointLight( 0xffffff, 2 );
+				scene.add( pointLight );
+
+				// light representation
+
+				const sphere = new THREE.SphereGeometry( 100, 16, 8 );
+
+				const mesh = new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xffffff } ) );
+				mesh.scale.set( 0.05, 0.05, 0.05 );
+				pointLight.add( mesh );
+
+				// material samples
+
+				//const cubeMaterial3 = new THREE.MeshPhongMaterial( { color: 0xccddff, envMap: textureCube, refractionRatio: 0.98, reflectivity: 0.9 } );
+				//const cubeMaterial2 = new THREE.MeshPhongMaterial( { color: 0xccfffd, envMap: textureCube, refractionRatio: 0.985 } );
+				//const cubeMaterial1 = new THREE.MeshPhongMaterial( { color: 0xffffff, envMap: textureCube, refractionRatio: 0.98 } );
+				const cubeMaterial1 = new THREE.MeshPhongMaterial( { color: 0xffffff, refractionRatio: 0.98 } );
+				const cubeMaterial2 = new THREE.MeshPhongMaterial( { color: 0x140111, refractionRatio: 0.985 } );
+				const cubeMaterial3 = new THREE.MeshPhongMaterial( { color: 0xccddff, refractionRatio: 0.98, reflectivity: 0.9 } );
+
+
+				renderer = new THREE.WebGLRenderer();
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				//renderer.setSize( window.innerWidth, 500 );
+				renderer.domElement.id = 'threeJSCanvas';
+				container.appendChild( renderer.domElement );
+
+				$("#overlay").appendTo($("#container"));
+
+				//stats = new Stats();
+				//container.appendChild( stats.dom );
+
+				const fbxLoader = new FBXLoader();
+				const loader = new PLYLoader();
+				const objLoader = new OBJLoader();
+
+				// Loading all individual letters and placing them in the scene
+				for (let i = 1; i < 20; i++){
+					//loader.load('models/textPLY/new/' + i + '.ply', function ( geometry) {
+					//fbxLoader.load( 'models/objTEXT/New/' + i + '.obj', function ( geometry ) {
+					objLoader.load( 'models/objTEXT/newst/' + i + '.obj', function ( geometry ) {
+
+						createScene( geometry, cubeMaterial1, cubeMaterial2,cubeMaterial3);
+					} );
+				}
+
+
+				//objLoader.load( 'models/ArtificialIngenuity.obj', function ( geometry ) {
+
+				//	createScene( geometry, cubeMaterial1, cubeMaterial2, cubeMaterial3, textureCube);
+
+				//} );
+
+
+				document.addEventListener( 'mousemove', onDocumentMouseMove );
+				window.addEventListener( 'resize', onWindowResize );
+				document.addEventListener('click', onClick);
+
+			}
+			function onClick() {
+				//const s = 0.5;
+				//textModels.forEach(resize);
+				//snakeMesh.scale.set(s, s, s);
+				//snakeMesh.scale.x.needsUpdate = true;
+				//snakeMesh.scale.y.needsUpdate = true;
+				//snakeMesh.scale.z.needsUpdate = true;
+				
+			}
+
+			function resize(item, index){
+				let s = 0.9;
+				if (window.innerHeight > window.innerWidth){
+					s = map(window.innerWidth);
+				}
+				item.scale.set(s, s, s);
+			}
+
+			function onWindowResize() {
+
+				textModels.forEach(resize);
+
+
+				windowHalfX = window.innerWidth / 2;
+				windowHalfY = window.innerHeight / 2;
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				//renderer.setSize( window.innerWidth, 500 );
+
+			}
+
+			function map(x){
+				let out_min = 0.0;
+				let out_max = 1.0;
+				let in_min = 0.0;
+				let in_max = 1920;
+  				return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+			}
+
+			function createScene( geometry, m1, m2, m3) {
+				//console.log(geometry);
+				//console.log(m1);
+				geometry.traverse( function ( child ) {
+					if ( child instanceof THREE.Mesh ) {
+						//child.material = new THREE.MeshPhongMaterial( { color: 0xccfffd, envMap: textureCube, refractionRatio: 0.985 } );
+						child.material = m2;
+ 						
+ 						//child.geometry.computeFaceNormals();
+ 						child.geometry.computeVertexNormals();
+						
+
+
+                    }
+				});
+
+
+				const s = 0.5;
+
+				geometry.scale.x = geometry.scale.y = geometry.scale.z = s;
+				geometry.position.y = 400;
+				//geometry.rotation.y = Math.PI / 2;
+				//snakeMesh.
+				//snakeMesh = new THREE.Mesh(snakeMesh, m1);
+				textModels.push(geometry);
+				scene.add(geometry);
+
+			}
+
+			function onDocumentMouseMove( event ) {
+
+				mouseX = ( event.clientX - windowHalfX ) * 4;
+				mouseY = ( event.clientY - windowHalfY ) * 4;
+
+			}
+
+			//
+			function textMove(){
+				xPos += xSpeed;
+				yPos += ySpeed;
+				zPos += zSpeed;
+
+				// Check for collision with walls
+				if (xPos <= -boxWidth / 2 || xPos >= boxWidth / 2 - objectSize) {
+					xSpeed *= -1; // Reverse horizontal direction
+				}
+				if (yPos <= -boxHeight / 2 || yPos >= boxHeight / 2 - objectSize) {
+					ySpeed *= -1; // Reverse vertical direction
+				}
+				if (zPos <= -boxDepth / 2 || zPos >= boxDepth / 2 - objectSize) {
+					zSpeed *= -1; // Reverse depth direction
+				}
+
+				var min = 0.001;
+		        var max = 0.01;
+		        var randX = Math.random() * (max - min) + min;
+		        var randY = Math.random() * (max - min) + min;
+		        var randZ = Math.random() * (max - min) + min;
+				
+				// Update rotation
+				xAngle += randX;
+				yAngle += randY;
+				zAngle += randZ;
+				zAngle = 0;
+				yAngle = 0;
+
+				// Update each model
+				textModels.forEach(rotateAndMoveText);
+			}
+
+			function rotateAndMoveText(item, index){
+				item.position.set(xPos, yPos, 0);
+  				item.rotation.set(xAngle, yAngle, zAngle);
+			}
+
+
+
+			function animate() {
+
+				requestAnimationFrame( animate );
+				textMove();
+				render();
+				//stats.update();
+
+			}
+
+			
+
+
+
+			function render() {
+
+
+				// For rotating text and moving within bounding box
+				
+
+				const timer = - 0.002 * Date.now();
+
+				//camera.position.x += ( mouseX - camera.position.x ) * .05;
+				//camera.position.y += ( - mouseY - camera.position.y ) * .05;
+
+				camera.lookAt( scene.position );
+
+				pointLight.position.x = 2000 * Math.cos( timer );
+				pointLight.position.z = 2000 * Math.sin( timer );
+
+				renderer.render( scene, camera );
+
+			}
+
+		</script>
+	
+
+	</body>
+</html>
