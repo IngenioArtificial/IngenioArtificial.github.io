@@ -18,7 +18,7 @@ html, body {
 	padding: 0;
 	width: 100%;
 }
-.button {
+.button1 {
   border: none;
   color: #fffad2;
   background-color: #fffad2;
@@ -30,7 +30,7 @@ html, body {
   margin: 4px 2px;
   cursor: pointer;
 }
-.button1 {
+.button2 {
 	background-color: #4CAF50;
 	position: top;
 	margin-left: 10px;

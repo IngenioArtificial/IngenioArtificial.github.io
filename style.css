@@ -18,7 +18,7 @@ audio {
   left: 10px;
   opacity: 0.7;
 }
-button {
+.button {
   background: black;
   color: white;
   border-radius: 4px;
