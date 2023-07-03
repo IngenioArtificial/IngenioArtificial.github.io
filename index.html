@@ -3,10 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <title>Como Todo</title>
+  <link rel="stylesheet" href="./styleOld.css">
   <link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
+
+	<div id="overlay">
+		<div id="overlayDiv">
+			<button id='menuButton' class="button button1"><strong>Menu</strong></button>
+		</div> 
+
+		<div id="overlayMenu">
+			<div class="button-container-first">
+				<button id='menuOption1' class="button button1" href="https://www.futurelessfestival.com/" target="_blank"><strong>Futureless Festival</strong></button>
+			</div>
+			<div class="button-container">
+				<button id='menuOption2' class="button button1" href="https://www.instagram.com/artificialingenuity/" target="_blank"><strong>Instagram</strong></button>
+			</div>
+			<div class="button-container">
+				<button id='menuOption3' class="button button1" href="IngenioArtificial.github.io/about.html"><strong>About</strong></button>
+			</div>
+		</div>
+
+	</div>
+
 <button id="start-button" onclick="startup()" style="float: left; top: 50vh;">Start!</button>
 <button id="audioButton" onclick="playPause()" style="float: left; top: 80vh;display: none;">Play / Stop</button>
 <!-- partial:index.partial.html -->
