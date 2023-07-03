@@ -345,8 +345,8 @@ function pixelate(freqData) {
     let col = getAverage(pixels, w - x * size, h - y * size, freqData);
     //let c = Math.round(col);
     //cube.material.color = colors.get(c);
-    //cube.material.color = new THREE.Color("rgb("+r+","+g+","+b+")");
-    cube.material.color = new THREE.Color("rgb("+pixels[((w - x * size) + w * (h - y * size)) * 4]+","+pixels[(((w - x * size) + w * (h - y * size)) * 4)+1]+","+pixels[(((w - x * size) + w * (h - y * size)) * 4)+2]+")");
+    cube.material.color = new THREE.Color("rgb("+r+","+g+","+b+")");
+    //cube.material.color = new THREE.Color("rgb("+pixels[((w - x * size) + w * (h - y * size)) * 4]+","+pixels[(((w - x * size) + w * (h - y * size)) * 4)+1]+","+pixels[(((w - x * size) + w * (h - y * size)) * 4)+2]+")");
   
     let freq = numscale(freqData[0], 0, 600, 0.5, 6);
   
