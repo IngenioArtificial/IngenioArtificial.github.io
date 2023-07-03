@@ -80,11 +80,50 @@ volumeControl.gain.value = audio.volume;
 //document.getElementById('audioButton').addEventListener("mouseup", playPause, false);
 //document.getElementById('audioButton').addEventListener("touchend", playPause, false);
 
+
+function menu() {
+  var el = document.getElementById("overlayMenu");
+  if (el.style.display == "none"){
+    el.style.display = "block";
+    el.style.background = "rgba(0, 0, 0, 0.5)";
+  }
+  else {
+    el.style.display = "none";
+    el.style.background = "rgba(0, 0, 0, 0)";
+  }
+}
+function buttonMouseOver() {
+  document.getElementById("menuButton").style.backgroundColor = "green";
+}
+function buttonMouseOut() {
+  document.getElementById("menuButton").style.backgroundColor = "transparent";
+}
+
+function futureless() {
+  event.cancelBubble = true;
+  if(event.stopPropagation) event.stopPropagation();
+
+  window.open("https://www.futurelessfestival.com/");
+}
+function instagram() {
+  event.cancelBubble = true;
+  if(event.stopPropagation) event.stopPropagation();
+
+  window.open("https://www.instagram.com/artificialingenuity/");
+}
+function about() {
+  event.cancelBubble = true;
+  if(event.stopPropagation) event.stopPropagation();
+
+  location.replace("IngenioArtificial.github.io/about.html");
+}
+
+
 function startup(){
-	audioCtx.resume();
-	document.getElementById('start-button').style.display = 'none';
-	document.getElementById('audioButton').style.display = 'block';
-	playPause();
+  audioCtx.resume();
+  document.getElementById('start-button').style.display = 'none';
+  document.getElementById('audioButton').style.display = 'block';
+  playPause();
 }
 
 
@@ -95,14 +134,14 @@ function playPause(){
         mediaPlayer = document.getElementById('player');
     }
     else {
-    	mediaPlayer = document.getElementById('iframePlayer');
+      mediaPlayer = document.getElementById('iframePlayer');
     }*/
     if (mediaPlayer.paused) {
         mediaPlayer.play();
-	document.getElementById("audioButton").style.background = "green";
+  document.getElementById("audioButton").style.background = "green";
     } else {
         mediaPlayer.pause();
-	document.getElementById("audioButton").style.background = "red";
+  document.getElementById("audioButton").style.background = "red";
     }
 }
 
@@ -193,7 +232,7 @@ function setupVideoFile() {
 }
 
 function setupWebCamera2() {
-	var constraints = { audio: true, video: { width: 1280, height: 720 } }; 
+  var constraints = { audio: true, video: { width: 1280, height: 720 } }; 
 
     navigator.mediaDevices.getUserMedia({ video: true })
                     .then(function (stream) {
@@ -211,11 +250,11 @@ function setupWebCamera2() {
 function setupColors() {
   colors = new Map();
   for (let i = 0; i < 256; i++) {
-	let c = new THREE.Color(`rgb(${i}, ${i}, ${i})`);
-	//let c = new THREE.Color(`rgb(166, 240, 4)`);
-	//if (i > 1){
+  let c = new THREE.Color(`rgb(${i}, ${i}, ${i})`);
+  //let c = new THREE.Color(`rgb(166, 240, 4)`);
+  //if (i > 1){
     // c = new THREE.Color(`rgb(${i}, ${i}, ${i})`);
-	//}
+  //}
     colors.set(i, c);
   }
 }
@@ -223,7 +262,7 @@ function setupColors() {
 function paolaSetupColors(pixels) {
   colors = new Map();
   for (let i = 0; i < 256; i++) {
-	c = new THREE.Color(`rgb(pixels[index], pixels[index + 1], pixels[index + 2])`);
+  c = new THREE.Color(`rgb(pixels[index], pixels[index + 1], pixels[index + 2])`);
     colors.set(i, c);
   }
 }
@@ -302,21 +341,21 @@ function pixelate(freqData) {
   cubes.forEach(cube => {
     let x = cube.position.x;
     let y = cube.position.y;
-	//console.log("X", x, "Y", y)
+  //console.log("X", x, "Y", y)
     let col = getAverage(pixels, w - x * size, h - y * size, freqData);
     //let c = Math.round(col);
     //cube.material.color = colors.get(c);
     //cube.material.color = new THREE.Color("rgb("+r+","+g+","+b+")");
     cube.material.color = new THREE.Color("rgb("+pixels[((w - x * size) + w * (h - y * size)) * 4]+","+pixels[(((w - x * size) + w * (h - y * size)) * 4)+1]+","+pixels[(((w - x * size) + w * (h - y * size)) * 4)+2]+")");
-	
+  
     let freq = numscale(freqData[0], 0, 600, 0.5, 6);
-	
+  
     let z = col / 10 + 0.0 * freq;
-	z = z*freq;
-	//console.log(z);
+  z = z*freq;
+  //console.log(z);
     cube.scale.z = z;
     cube.position.z = z / 2;
-	counter += 1;
+  counter += 1;
   });
 }
 
@@ -344,6 +383,16 @@ const numscale = (num, in_min, in_max, out_min, out_max) => {
 
 function setupEventListeners() {
   window.addEventListener("resize", onWindowResize);
+  document.getElementById("menuOption1").addEventListener("click", futureless);
+  document.getElementById("menuOption2").addEventListener("click", instagram);
+  document.getElementById("menuOption3").addEventListener("click", about);
+
+
+  document.getElementById("overlayMenu").style.display = "none";
+  document.getElementById("menuButton").addEventListener("click", menu);
+  document.getElementById("menuButton").addEventListener("mouseover", buttonMouseOver);
+  document.getElementById("menuButton").addEventListener("mouseout", buttonMouseOut);
+  document.getElementById("overlayMenu").addEventListener("click", menu);
 }
 
 function onWindowResize() {
