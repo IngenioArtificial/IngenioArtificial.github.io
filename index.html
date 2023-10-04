@@ -1,57 +1,291 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Como Todo</title>
-  <link rel="stylesheet" href="./styleOld.css">
-  <link rel="stylesheet" href="./style.css">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  		<title>Artificial Ingenuity Creative Art + tech Studio</title>
+<!-- 
 
-</head>
+Beyond Time, Beyond Code
+Beyond History: The Quipus of Tupicocha
+
+-->
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/fontAwesome.css">
+        <link rel="stylesheet" href="css/light-box.css">
+        <link rel="stylesheet" href="css/templatemo-style.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+
 <body>
 
-	<div id="overlay">
-		<div id="overlayDiv">
-			<button id='menuButton' class="button1 button2"><strong>Menu</strong></button>
-		</div> 
+    <nav>
+        <div class="logo">
+            <a href="index.html">ARTIFICIAL<em>INGENUITY</em></a>
+        </div>
+        <div class="menu-icon">
+        <span></span>
+      </div>
+    </nav>
 
-		<div id="overlayMenu">
-			<div class="button-container-first">
-				<button id='menuOption1' class="button1 button2" href="https://www.futurelessfestival.com/" target="_blank"><strong>Futureless Festival</strong></button>
-			</div>
-			<div class="button-container">
-				<button id='menuOption2' class="button1 button2" href="https://www.instagram.com/artificialingenuity/" target="_blank"><strong>Instagram</strong></button>
-			</div>
-			<div class="button-container">
-				<button id='menuOption3' class="button1 button2" href="IngenioArtificial.github.io/about.html"><strong>About</strong></button>
-			</div>
-		</div>
-
-	</div>
-
-<button class="button" id="start-button" onclick="startup()" style="float: left; top: 10vh;">Start!</button>
-<button class="button" id="audioButton" onclick="playPause()" style="float: left; top: 80vh;display: none;">Play / Stop</button>
-<!-- partial:index.partial.html -->
-<canvas style="margin-top: 20vh;" id="canvas" class="hide"></canvas>
-<video id="jonas" muted="muted" style="margin-top: 50vh;" class="hide" playsinline="true"></video>
-<figure>
-   
-    <!--<audio
-        controls
-        id="song" src="Rossy.wav">
-            Your browser does not support the
-            <code>audio</code> element.
-    </audio>
-	-->
-</figure>
-<!-- 
-  The playsinline attribute enables the 
-  video to play in Safari on iOS 11 
--->
-<!-- partial -->
-  <script src='./three.min.js'></script>
-<script src='./ZvdZGv.js'></script><script  src="./script.js"></script>
+    <div id="video-container">
+       <div class="video-overlay"></div>
+        <div class="video-content">
+            <div class="inner">
+              <h1>Artificial Ingenuity <em>Human-Machine Co-Creation </em></h1>
+              <p>Creative Arts & Critical Tech Studio</p>
+              <p>When creativity not only meets innovation, but reformulates machinic intelligence, we talk about Artificial Ingenuity.</p>
+                <div class="scroll-icon">
+                    <a class="scrollTo" data-scrollTo="portfolio" href="#"><img src="img/scroll-icon.png" alt=""></a>
+                </div>    
+            </div>
+        </div>
+        <video autoplay="" loop="" unmute>
+        	<source src="videotupi.mp4" type="video/mp4" >
+        </video>
+    </div>
 
 
+    <div class="full-screen-portfolio" id="portfolio">
+        <div class="container-fluid">
+            <div class="col-md-4 col-sm-6">
+                <div class="portfolio-item">
+                    <a href="img/authorities.jpg" data-lightbox="image-1"><div class="thumb">
+                        <div class="hover-effect">
+                            <div class="hover-content">
+                                <h1>AUTHORITIES<em>CLIP</em></h1>
+                                <p>The Huayrona meeting</p>
+                            </div>
+                        </div>
+                        <div class="image">
+                            <img src="img/authorities.jpg"">
+                        </div>
+                    </div></a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="portfolio-item">
+                    <a href="img/church.jpg" data-lightbox="image-1"><div class="thumb">
+                        <div class="hover-effect">
+                            <div class="hover-content">
+                                <h1>CHURCH <em>CLIP</em></h1>
+                                <p>The church of Tupicocha</p>
+                            </div>
+                        </div>
+                        <div class="image">
+                            <img src="img/church.jpg">
+                        </div>
+                    </div></a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="portfolio-item">
+                    <a href="img/cruces.jpg" data-lightbox="image-1"><div class="thumb">
+                        <div class="hover-effect">
+                            <div class="hover-content">
+                                <h1>LAS CRUCES<em>CLIP</em></h1>
+                                <p>Decorating the Crosses of respective Parcialidades</p>
+                            </div>
+                        </div>
+                        <div class="image">
+                            <img src="img/cruces.jpg">
+                        </div>
+                    </div></a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="portfolio-item">
+                    <a href="img/Entrada.jpg" data-lightbox="image-1"><div class="thumb">
+                        <div class="hover-effect">
+                            <div class="hover-content">
+                                <h1>ENTRADA <em>CLIP</em></h1>
+                                <p>Entrance to Tupicocha</p>
+                            </div>
+                        </div>
+                        <div class="image">
+                            <img src="img/Entrada.jpg">
+                        </div>
+                    </div></a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="portfolio-item">
+                    <a href="img/huayrona.jpg" data-lightbox="image-1"><div class="thumb">
+                        <div class="hover-effect">
+                            <div class="hover-content">
+                                <h1>HUAYRONA <em>CLIP</em></h1>
+                                <p>The Townsmeeting</p>
+                            </div>
+                        </div>
+                        <div class="image">
+                            <img src="img/huayrona.jpg">
+                        </div>
+                    </div></a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="portfolio-item">
+                    <a href="img/interior.jpg" data-lightbox="image-1"><div class="thumb">
+                        <div class="hover-effect">
+                            <div class="hover-content">
+                                <h1>CHURCH'S INTERIOR<em>CLIP</em></h1>
+                                <p>Barroque influence in decoration</p>
+                            </div>
+                        </div>
+                        <div class="image">
+                            <img src="img/interior.jpg">
+                        </div>
+                    </div></a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="portfolio-item">
+                    <a href="img/newauthorities.jpg" data-lightbox="image-1"><div class="thumb">
+                        <div class="hover-effect">
+                            <div class="hover-content">
+                                <h1>NEW AUTHORITIES <em>CLIP</em></h1>
+                                <p>Quipus passed to new authorities of town</p>
+                            </div>
+                        </div>
+                        <div class="image">
+                            <img src="img/newauthorities.jpg">
+                        </div>
+                    </div></a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="portfolio-item">
+                    <a href="img/title.jpg" data-lightbox="image-1"><div class="thumb">
+                        <div class="hover-effect">
+                            <div class="hover-content">
+                                <h1>TITLE <em>CLIP</em></h1>
+                                <p>The main title</p>
+                            </div>
+                        </div>
+                        <div class="image">
+                            <img src="img/title.jpg">
+                        </div>
+                    </div></a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+            	<div class="portfolio-item">
+                	<a href="img/quipus.jpg" data-lightbox="image-1"><div class="thumb">
+                        <div class="hover-effect">
+                            <div class="hover-content">
+                                <h1>QUIPUS<em>CLIP</em></h1>
+                                <p>AThe Quipus of Tupicocha</p>
+                            </div>
+                        </div>
+                        <div class="image">
+                            <img src="img/quipus.jpg">
+                        </div>
+                    </div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="container-fluid">
+            <div class="col-md-12">
+                <p>Copyright &copy; 2020 Paola Torres 
+    
+</p>
+            </div>
+        </div>
+    </footer>
+
+
+      <!-- Modal button -->
+    <div class="popup-icon">
+      <button id="modBtn" class="modal-btn"><img src="img/contact-icon.png" alt=""></button>
+    </div>  
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <!-- Modal Content -->
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h3 class="header-title">Say hello to <em>Highway</em></h3>
+          <div class="close-btn"><img src="img/close_contact.png" alt=""></div>    
+        </div>
+        <!-- Modal Body -->
+        <div class="modal-body">
+          <div class="col-md-6 col-md-offset-3">
+            <form id="contact" action="" method="post">
+                <div class="row">
+                    <div class="col-md-12">
+                      <fieldset>
+                        <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required="">
+                      </fieldset>
+                    </div>
+                    <div class="col-md-12">
+                      <fieldset>
+                        <input name="email" type="email" class="form-control" id="email" placeholder="Your email..." required="">
+                      </fieldset>
+                    </div>
+                    <div class="col-md-12">
+                      <fieldset>
+                        <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required=""></textarea>
+                      </fieldset>
+                    </div>
+                    <div class="col-md-12">
+                      <fieldset>
+                        <button type="submit" id="form-submit" class="btn">Send Message Now</button>
+                      </fieldset>
+                    </div>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <section class="overlay-menu">
+      <div class="container">
+        <div class="row">
+          <div class="main-menu">
+              <ul>
+                  <li>
+                      <a href="index.html">Home - Full-width</a>
+                  </li>
+                  <li>
+                      <a href="about.html">About Us</a>
+                  </li>
+                  <li>
+                      <a href="blog.html">Blog Entries</a>
+                  </li>
+                  <li>
+                      <a href="single-post.html">Single Post</a>
+                  </li>
+              </ul>
+              <p>We create awesome templates for you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+    
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    
 </body>
 </html>
-
